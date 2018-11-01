@@ -1,0 +1,11 @@
+import json
+
+def hotelSearch(str): #str is city inputted by the user
+    lst = [] #empty list for hotels
+    for location in json_object:
+	if str == location:
+	    break
+    for item in str:
+	lst.append(item)
+    sorted(lst, key=str.lower) #capitalization doesn't matter
+    return list
