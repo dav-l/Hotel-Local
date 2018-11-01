@@ -1,0 +1,68 @@
+<html>
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="./index_files/css" rel="stylesheet">
+    <link href="./index_files/main.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="s002">
+      <form>
+        <fieldset>
+          <legend>Hotel Local</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <div class="icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+              </svg>
+            </div>
+            <input id="search" type="text" placeholder="Location">
+          </div>
+          
+          <div class="input-field fifth-wrap">
+            <button class="btn-search" type="button" onclick="savedata()" ><a href="pages/Hotels.html">SEARCH</a></button>
+            <script type="text/javascript">
+              document.getElementById("myButton").onclick = function () {
+                  location.href = "pages/Hotels.html";
+              };
+          </script>
+          </div>
+        </div>
+      </form>
+    </div>
+</body>
+  <footer>    
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#">stuff</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="pages/About.html">About</a></li>
+            <li><a href="pages/Hotels.html">Hotels</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </footer>
+    
+</html>
