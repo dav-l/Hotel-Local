@@ -1,0 +1,25 @@
+[debug] [2018-11-04T22:33:40.050Z] ----------------------------------------------------------------------
+[debug] [2018-11-04T22:33:40.053Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\david\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-11-04T22:33:40.054Z] CLI Version:   6.0.0
+[debug] [2018-11-04T22:33:40.054Z] Platform:      win32
+[debug] [2018-11-04T22:33:40.054Z] Node Version:  v8.12.0
+[debug] [2018-11-04T22:33:40.054Z] Time:          Sun Nov 04 2018 14:33:40 GMT-0800 (Pacific Standard Time)
+[debug] [2018-11-04T22:33:40.054Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-04T22:33:40.072Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-04T22:33:40.074Z] > authorizing via signed-in user
+[debug] [2018-11-04T22:33:40.074Z] [iam] checking project firebase-setup-221202 for permissions ["firebase.projects.get"]
+[debug] [2018-11-04T22:33:40.078Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firebase-setup-221202:testIamPermissions  
+
+[debug] [2018-11-04T22:33:40.619Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-04T22:33:40.621Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firebase-setup-221202  
+ 
+[debug] [2018-11-04T22:33:41.089Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\david\Desktop\web\firebase-example-web'...
+[info] 
+[debug] [2018-11-04T22:33:41.095Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/892853776465/clients/_:getWebAppConfig  
+ 
+[debug] [2018-11-04T22:33:41.678Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
