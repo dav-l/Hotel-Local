@@ -1,6 +1,5 @@
 <html>
 <head>
-    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -24,20 +23,29 @@
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
               </svg>
             </div>
-            <input id="search" type="text" placeholder="Location">
+            <input id="search" type="textfield" placeholder="Location" />
           </div>
           
           <div class="input-field fifth-wrap">
-            <button class="btn-search" type="button" onclick="savedata()" ><a href="pages/Hotels.html">SEARCH</a></button>
-            <script type="text/javascript">
-              document.getElementById("myButton").onclick = function () {
-                  location.href = "pages/Hotels.html";
-              };
-          </script>
+            <!--<button id="searchButton" class="btn-search" type="button" onclick="savedata()" ><a href="pages/Hotels.html">SEARCH</a></button>-->
+            <button id="searchButton" class="btn-search" type="button">SEARCH</button>
           </div>
         </div>
+		<pre id="results">Hotel Results here..</pre>
       </form>
     </div>
+	
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+	<!-- Firebase App is always required and must be first -->
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+	
+	<!-- Add additional services that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
+	
+	<script src="script.js"></script>
 </body>
   <footer>    
     <nav class="navbar navbar-default">
