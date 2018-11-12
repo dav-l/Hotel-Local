@@ -1,4 +1,4 @@
-//-- Firebase initialization/config with API key goes here --
+// Initialize Firebase code goes here
 
 /* Primary code references for search bar (so far):
  * 
@@ -12,6 +12,8 @@
  * https://firebase.google.com/docs/firestore/query-data/queries
  * Cloud Firestore Quicktip — DocumentSnapshot vs. QuerySnapshot:
  * https://medium.com/@scarygami/cloud-firestore-quicktip-documentsnapshot-vs-querysnapshot-70aef6d57ab3
+ * Firebase Firestore Tutorial #3 - Getting Documents:
+ * https://www.youtube.com/watch?v=kmTECF0JZyQ
  *
  */
 
@@ -32,90 +34,59 @@ const searchButton = document.querySelector("#searchButton");
 const searchInput = document.querySelector("#search");
 const searchOutput = document.querySelector("#results");
 
-//Output string
-const results = "";
 
-//Go through each document in hotel collection to print
-function hotelLoop(hotelList. results) {
-	var hotelQuery = hotelList.collection('Hotels');
+//Go through each document in hotel collection (given a city document) to print
+function hotelLoop(hotelList) {
+	//Clear output box upon each search request
+	searchOutput.innerText = "";
+	//refer to hotels collection in given city
+	const hotelQuery = hotelList.collection('Hotels');
+	
+	//within hotels collection, call hotelPrint on each hotel document
 	hotelQuery.get().then(function(hotelSnap) {
-			if (hotelSnap.empty) {
-				console.log('No documents in Hotels');
-			} else {
-				hotelSnap.forEach(function(hotelDoc) {
-					hotelPrint(hotelDoc, results);
-				});
-			}
+		hotelSnap.docs.forEach(function(hotelDoc) {
+			hotelPrint(hotelDoc);
 		})
-		.catch(function(error) {
-			console.log('Error fetching collection', error);
-		});
+	})
+	
 }
 
 //For a given hotel document, print it's attributes
-function hotelPrint(hotel, results) {
-	hotel.get().then(function(docSnap) {
-		if (docSnap && docSnap.exists) {
-			const currentHotel = docSnap.data();
-			
-			results += docSnap.id + " - Parking: ";
-			if (currentHotel.Parking == true) {
-				results += "free, ";
-			} else {
-				results += "none, "
-			}
-			
-			results += "Rating: " + currentHotel.Rating + ", Wifi: "; 
-			
-			if (currentHotel.Wifi == true) {
-				results += "available";
-			} else {
-				results += "unavailable";
-			}
-			
-			results += "<br>";
-			console.log(docSnap.id, "status read!");
-		}
-	})
-	.catch(function(error) {
-			console.log('Error getting documents', error);
-		});
+function hotelPrint(hotel) {
+	//Start of each hotel output line with name and attributes
+	searchOutput.innerText += hotel.id + " - \tParking: ";
+	const currentHotel = hotel.data();
+	
+	//Based on data in Firestore, print a readable output
+	if (currentHotel.Parking == true) {
+		searchOutput.innerText += "free,";
+	} else {
+		searchOutput.innerText += "none,";
+	}
+	
+	searchOutput.innerText += "\tRating: " + currentHotel.Rating + ",\tWifi: ";
+	
+	if (currentHotel.Wifi == true) {
+		searchOutput.innerText += "available\n";
+	} else {
+		searchOutput.innerText += "unavailable\n";
+	}
 }
 
 //Linking up functions to actual search bar functionality
 searchButton.addEventListener("click", function() {
 	const inputCity = searchInput.value;
-	if (inputCity == "Palo Alto") {
-		//const paHotels = paRef.collection('Hotels');
-		hotelLoop(paRef, results);
+	
+	//Given user's searchbar input, if city is valid, call hotelLoop
+	if (inputCity == "Palo Alto") {;
+		hotelLoop(paRef);
 	} else if (inputCity == "San Luis Obispo") {
-		//const sloHotels = sloRef.collection('Hotels');
-		hotelLoop(sloRef, results);
+		hotelLoop(sloRef);
 	} else if (inputCity == "Santa Monica") {
-		//const smHotels = smRef.collection('Hotels');
-		hotelLoop(smRef, results);
+		hotelLoop(smRef);
 	} else {
+		//Otherwise, print unavailable message and display window
 		window.alert("Sorry, we don't have info for hotels in that city yet.");
+		searchOutput.innerText = "Information for hotels in " + inputCity + " unavailable\n";
 	}
 })
-
-/* //Tester code to verify access of database and print upon clicking search button
-const ref = firestore.doc("Cities/Palo Alto/Hotels/Coronet Motel");
-
-searchButton.addEventListener("click", function() {
-	ref.get().then(function(docSnap) {
-		if (docSnap && docSnap.exists) {
-			const myResult = docSnap.data();
-			searchOutput.innerText = "Coronet Motel, Parking: " + myResult.Parking + 
-			", Rating: " + myResult.Rating + ", Wifi: " + myResult.Wifi;
-			console.log("Status read!");
-		}
-	}).catch(function(error) {
-		console.log("Got an error: ", error);
-	});
-})*/
-
-/* //Prior code to connect search button to total list of hotels (on hotels page)
-document.getElementById("searchButton").onclick = function () {
-    location.href = "pages/Hotels.html";
-};*/
