@@ -371,6 +371,9 @@ legend {
 * {
   box-sizing: border-box;
 }
+.s001 {
+    padding-left: 15px;
+}
 
 .s002 {
   min-height: 94.5vh;
