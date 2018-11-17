@@ -2499,11 +2499,10 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 20px;
-  font-size: 21px;
+  font-size: 24px;
   line-height: inherit;
   color: #333;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
 }
 label {
   display: inline-block;
@@ -4166,7 +4165,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {

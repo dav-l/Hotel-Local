@@ -1,16 +1,39 @@
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="./css/bootstrap.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="./index_files/css" rel="stylesheet">
-    <link href="./index_files/main.css" rel="stylesheet">
+    <link href="./css/css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
   </head>
   
   <body>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <img src="images/newlogo.png" width="75" height="50">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Book.html">Make A Booking</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
     <div class="s002">
       <form>
         <fieldset>
@@ -31,6 +54,10 @@
             <button id="searchButton" class="btn-search" type="button">SEARCH</button>
           </div>
         </div>
+		<button id="parkFilter" class="filterBtn" type="button">Free Parking</button>
+		<button id="wifiFilter" class="filterBtn" type="button">Wi-Fi availability</button>
+		<button id="ratingLow" class="filterBtn" type="button">Rating from Low to High</button>
+		<button id="ratingHigh" class="filterBtn" type="button">Rating from High to Low</button>
 		<pre id="results">Hotel Results here..</pre>
       </form>
     </div>
@@ -46,31 +73,6 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
 	
 	<script src="script.js"></script>
-</body>
-  <footer>    
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="#">stuff</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="pages/About.html">About</a></li>
-            <li><a href="pages/Hotels.html">Hotels</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </footer>
+</body> 
     
 </html>
