@@ -73,7 +73,16 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
-	
+	<script>
+    var input = document.getElementById("search");
+    input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("searchButton").click();
+        }
+    });
+    </script>
+    
 	<script src="script.js"></script>
 </body> 
     
