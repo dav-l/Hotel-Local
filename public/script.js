@@ -17,15 +17,7 @@
  * https://www.youtube.com/watch?v=kmTECF0JZyQ
  *
  */
-   var config = {
-    apiKey: "AIzaSyB9OMhcTdFNT5CUOnbAcXrM2Y2--DPSd9k",
-    authDomain: "hotel-local-cs115.firebaseapp.com",
-    databaseURL: "https://hotel-local-cs115.firebaseio.com",
-    projectId: "hotel-local-cs115",
-    storageBucket: "hotel-local-cs115.appspot.com",
-    messagingSenderId: "854556195678"
-  };
-  firebase.initializeApp(config);
+
 
 /*Informed by Chrome Console to place prior to calling Firestore functions
  (to avoid breaking app)*/

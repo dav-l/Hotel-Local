@@ -73,7 +73,8 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
+  	<!-- script that enables enter submit behavior -->
 	<script>
     var input = document.getElementById("search");
     input.addEventListener("keyup", function(event) {
@@ -83,6 +84,7 @@
         }
     });
     </script>
+    	<!-- script that enables autofill funcationality on searches -->
     <script>
       function autocomplete(inp, arr) {
         var currentFocus;
@@ -138,7 +140,6 @@
           }
         }
         function closeAllLists(elmnt) {
-      
           var x = document.getElementsByClassName("autocomplete-items");
           for (var i = 0; i < x.length; i++) {
             if (elmnt != x[i] && elmnt != inp) {
@@ -146,15 +147,38 @@
             }
           }
         }
-      
         document.addEventListener("click", function (e) {
             closeAllLists(e.target);
         });
       }
-      
       var cities = ["Palo Alto","Santa Monica","San Luis Obispo"];
-      
       autocomplete(document.getElementById("search"), cities);
+      </script>
+      <!-- script for cookies to autofill city name in book -->
+      <script>
+      function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {   
+        document.cookie = name+'=; Max-Age=-99999999;';  
+    }
+      
       </script>
 	<script src="script.js"></script>
 </body> 
