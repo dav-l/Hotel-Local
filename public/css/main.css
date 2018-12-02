@@ -374,6 +374,51 @@ legend {
 .s001 {
     padding-left: 15px;
 }
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+.autocomplete-items div:hover {
+
+  background-color: #e9e9e9; 
+}
+
+.autocomplete-active {
+
+  background-color:lightslategray !important; 
+  color: #ffffff; 
+}
 
 .s002 {
   min-height: 94.5vh;
@@ -515,6 +560,20 @@ legend {
   background: #af7d51;
 }
 
+.s002 .togglebtn{
+  background-color: #b78a62;
+    border: 1px #af7d51;
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    display: block;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.s002 .togglebtn:hover{
+  background: #af7d51;
+}
+
 @media screen and (max-width: 992px) {
   .s002 form legend {
     font-size: 50px;
@@ -601,14 +660,6 @@ legend {
   font-size: 17px;
 }
 
-div.search-results {
-  background-color:white;
-}
-div.results-fb {
-  background-color: red;
-}
-
-
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
   .topnav a, .topnav input[type=text] {
@@ -623,63 +674,76 @@ div.results-fb {
       border: 1px solid #ccc;
   }
 }
+
+
 /*sidebar-----------------------------*/
-.sidenav .filterBtn .button{
-  background-color:transparent;
-  border: 1px #af7d51;
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  display: block; 
+.sidenav .filterBtn .button {
+    background-color: transparent;
+    border: 1px #af7d51;
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    display: block;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
 }
-.sidenav .filterBtn .button:not(:last-child){
-  border-right: none;
-}
-.sidenav .filterBtn .button:hover{
-  background-color: #af7d51;
-}
+
+    .sidenav .filterBtn .button:not(:last-child) {
+        border-right: none;
+    }
+
+    .sidenav .filterBtn .button:hover {
+        background-color: #af7d51;
+    }
 
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 51; /* Stay at the top */
-  left: 0;
-  background-color: #b78a62; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #b78a62; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow: auto;
+    max-height: 100%;
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #af7d51;
-  display: block;
-  transition: 0.3s;
-}
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #af7d51;
+        display: block;
+        transition: 0.3s;
+    }
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s;
-  padding: 20px;
+    transition: margin-left .5s;
+    padding: 20px;
 }
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
 }
