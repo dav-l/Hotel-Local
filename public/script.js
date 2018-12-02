@@ -1,5 +1,13 @@
 // Initialize Firebase
-
+var config = {
+    apiKey: "AIzaSyB9OMhcTdFNT5CUOnbAcXrM2Y2--DPSd9k",
+    authDomain: "hotel-local-cs115.firebaseapp.com",
+    databaseURL: "https://hotel-local-cs115.firebaseio.com",
+    projectId: "hotel-local-cs115",
+    storageBucket: "hotel-local-cs115.appspot.com",
+    messagingSenderId: "854556195678"
+};
+firebase.initializeApp(config);
 
 /* Primary code references for search bar (so far):
  * 
@@ -395,3 +403,17 @@ clearFilterButton.addEventListener("click", function() {
 	priceIn = 0;
 	pickCity();
 })
+
+
+//Sidebar Toggle-----------------------------
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("index").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("index").style.marginLeft = "0";
+}
