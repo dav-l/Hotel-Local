@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="./css/css" rel="stylesheet">
+    <!--<link href="./css/css" rel="stylesheet">-->
     <link href="./css/main.css" rel="stylesheet">
     <link href="./css/bootstrap.css" rel="stylesheet">
 	<title>Hotel Local</title>
@@ -49,42 +49,72 @@
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
               </svg>
             </div>
+			<!--Search Bar input-->
             <input id="search" type="textfield" placeholder="Location" />
           </div>
           
           <div class="input-field fifth-wrap">
-            <!--<button id="searchButton" class="btn-search" type="button" onclick="savedata()" ><a href="pages/Hotels.html">SEARCH</a></button>-->
+			<!--Search Button-->
             <button id="searchButton" class="btn-search" type="button">SEARCH</button>
           </div>
         </div>
 		
+		<!--Drop-down list for choosing price to display-->
 		<p>Price Season: <select name="Price Season" id="seasonalPrice" onchange="seasonChange()">
 			<option value="winter">Winter</option>
 			<option value="spring">Spring</option>
 			<option value="summer">Summer</option>
 		</select></p>
 		
+		<!--General Filtering-->
 		<button id="parkFilter" class="filterBtn" type="button">Free Parking</button>
 		<button id="wifiFilter" class="filterBtn" type="button">Wi-Fi availability</button>
 		
+		<!--Rating Filters-->
 		<button id="ratingOne" class="filterBtn" type="button">Rating 1 Star and up</button>
 		<button id="ratingTwo" class="filterBtn" type="button">Rating 2 Stars and up</button>
 		<button id="ratingThree" class="filterBtn" type="button">Rating 3 Stars and up</button>
 		<button id="ratingFour" class="filterBtn" type="button">Rating 4 Stars and up</button>
 		
+		<!--Rate Sort (High -> Low)-->
 		<button id="rateHigh" class="filterBtn" type="button">Rating High to Low</button>
 		
+		<!--Price Sort (High -> Low & Low -> High)-->
 		<button id="priceLow" class="filterBtn" type="button">Price Low to High</button>
 		<button id="priceHigh" class="filterBtn" type="button">Price High to Low</button>
 		
+		<!--Price Filtering-->
 		<button id="priceEight" class="filterBtn" type="button">Price $800 and below</button>
 		<button id="priceSix" class="filterBtn" type="button">Price $600 and below</button>
 		<button id="priceFour" class="filterBtn" type="button">Price $400 and below</button>
 		<button id="priceTwo" class="filterBtn" type="button">Price $200 and below</button>
 		
+		<!--Clear Filters-->
 		<button id="clearFilter" class="filterBtn" type="button">Clear Filtering</button>
 		
-		<pre id="results">Hotel Results here..</pre>
+		<!--Results Table-->
+		<table id="resultsTable" style="width:100%;" border="3" cellspacing="4" cellpadding="4">
+            <thead>
+				<!--Placed additional styling here for less cluttered code-->
+				<style type="text/css">
+					table {
+						background-color:rgba(2,2,2,0.68);
+					}
+					th, td {
+						font-family: sans-serif;
+						color: rgba(255, 255, 255, 0.90);
+					}
+				</style>
+                <tr>
+                    <th>Hotel</th>
+                    <th>Parking</th>
+					<th>Pricing</th>
+                    <th>Rating</th>
+                    <th>Wifi</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
       </form>
     </div>
 	
