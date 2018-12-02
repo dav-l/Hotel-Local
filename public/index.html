@@ -1,209 +1,256 @@
-<html>
+﻿<html>
 <head>
     <link href="./css/bootstrap.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="./css/css" rel="stylesheet">
+    <!--<link href="./css/css" rel="stylesheet">-->
     <link href="./css/main.css" rel="stylesheet">
     <link href="./css/bootstrap.css" rel="stylesheet">
-
-  </head>
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <div class="s001">
-                <img src="images/whitelogo.png" width="75" height="50">
-              </div>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+    <title>Hotel Local</title>
+</head>
+<nav id="navBar" class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="s001">
+                <img src="images/whitelogo.png" width="70" height="50">
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
+
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <!--had a </button> here -->
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="About.html">About</a></li>
                 <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Book.html">Make A Booking</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <!----sidebar-------------------------->
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <div class="filterBtn">
-            <!--<h6>General Filtering</h6>-->
-            <button id="parkFilter" class="button">Free Parking</button>
-            <button id="wifiFilter" class="button">Wi-Fi availability</button>
-        
-            <!--<h6>Rating Filters</h6>-->
-            <button id="ratingOne" class="button">Rating *</button>
-            <button id="ratingTwo" class="button">Rating **</button>
-            <button id="ratingThree" class="button">Rating ***</button>
-            <button id="ratingFour" class="button">Rating ****</button>
-        
-            <!--<h6>Rating Sort</h6>-->
-            <button id="rateHigh" class="button">Rating High to Low</button>
-        
-            <!--<h6>Pricing Sorts</h6>-->
-            <button id="priceLow" class="button">Price Low to High</button>
-            <button id="priceHigh" class="button">Price High to Low</button>
-        
-            <!--<h6>Pricing Filters</h6>-->
-            <button id="priceEight" class="button">Price $800 and below</button>
-            <button id="priceSix" class="button">Price $600 and below</button>
-            <button id="priceFour" class="button">Price $400 and below</button>
-            <button id="priceTwo" class="button">Price $200 and below</button>
-        
-            <button id="clearFilter" class="button">Clear Filtering</button>
+                <li><a href="Book.html">Explore Hotels & Cities</a></li>
+            </ul>
         </div>
-        </div>
-        <!-------------------------------------->
-  
-  <body>
-    <div id=index class="s002">
-      <!-- Use any element to open the sidenav -->
-      <button onclick="openNav()">Filter/Sort</button>
-      <form>
-        <fieldset>
-          <legend>Hotel Local</legend>
-        </fieldset>
-        <div class="inner-form">
-          <div class="input-field first-wrap">
-            <div class="icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
-              </svg>
-            </div>
-            <input id="search" type="textfield" placeholder="Location" type="submit" onclick="othername();"/>
-          </div>
-           <!--<button id='subButton' type='button'>Print your Location!</button>-->
-           <!--<p id='result'></p></div>-->
-          <div class="input-field fifth-wrap">
-            <!--<button id="searchButton" class="btn-search" type="button" onclick="savedata()" ><a href="pages/Hotels.html">SEARCH</a></button>-->
-            <button id="searchButton" class="btn-search" type="button">SEARCH</button>
-          </div>
-        </div>
-      </form>
     </div>
+</nav>
+
+<!----sidebar-------------------------->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="filterBtn">
+        <!--<h6>General Filtering</h6>-->
+        <button id="parkFilter" class="button">Free Parking</button>
+        <button id="wifiFilter" class="button">Wi-Fi availability</button>
+
+        <!--<h6>Rating Filters</h6>-->
+        <button id="ratingOne" class="button">Rating *</button>
+        <button id="ratingTwo" class="button">Rating **</button>
+        <button id="ratingThree" class="button">Rating ***</button>
+        <button id="ratingFour" class="button">Rating ****</button>
+
+        <!--<h6>Rating Sort</h6>-->
+        <button id="rateHigh" class="button">Rating High to Low</button>
+
+        <!--<h6>Pricing Sorts</h6>-->
+        <button id="priceLow" class="button">Price Low to High</button>
+        <button id="priceHigh" class="button">Price High to Low</button>
+
+        <!--<h6>Pricing Filters</h6>-->
+        <button id="priceEight" class="button">Price $800 and below</button>
+        <button id="priceSix" class="button">Price $600 and below</button>
+        <button id="priceFour" class="button">Price $400 and below</button>
+        <button id="priceTwo" class="button">Price $200 and below</button>
+
+        <button id="clearFilter" class="button">Clear Filters</button>
+        
+        <!--Drop-down list for choosing price to display-->
+        <p class="button">
+            Season Price <select name="Price Season" id="seasonalPrice" class="button" onchange="seasonChange()">
+                <option value="winter">Winter</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+            </select>
+        </p>
+        
+    </div>
+    
+</div>
+<!-------------------------------------->
+
+<body>
+
+    <div id="index" class="s002">
+        <button onclick="openNav()" class="togglebtn">Filters</button>
+        <form>
+            <fieldset>
+                <legend>HotelLocal</legend>
+            </fieldset>
+            <div class="inner-form">
+                <div class="input-field first-wrap">
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+                        </svg>
+                    </div>
+                    <!--Search Bar input-->
+                    <input id="search" type="textfield" placeholder="Location" />
+                </div>
+
+                <div class="input-field fifth-wrap">
+                    <!--Search Button-->
+                    <button id="searchButton" class="btn-search" type="button">SEARCH</button>
+                </div>
+            </div>
+
+            <!--Results Table-->
+            <table id="resultsTable" style="width:100%;" border="3" cellspacing="4" cellpadding="4">
+                <thead>
+                    <!--Placed additional styling here for less cluttered code-->
+                    <style type="text/css">
+                        table {
+                            /* Black background with 68% opacity */
+                            background-color: rgba(0,0,0,0.68);
+                            border-collapse: separate;
+                        }
+
+                        th, td {
+                            font-family: sans-serif;
+                            /* White font with 90% opacity */
+                            color: rgba(255, 255, 255, 0.90);
+                        }
+
+                        th {
+                            font-weight: bold;
+                        }
+                    </style>
+                    <tr>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Hotel</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Parking</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Pricing</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Rating</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Wifi</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </form>
+    </div>
+
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
-    
+
     <!-- Add additional services that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
-      <!-- script that enables enter submit behavior -->
+    <!-- script that enables enter submit behavior -->
     <script>
-      var input = document.getElementById("search");
-      input.addEventListener("keyup", function(event) {
-          event.preventDefault();
-          if (event.keyCode === 13) {
-              document.getElementById("searchButton").click();
-          }
-      });
-      </script>
-        <!-- script that enables autofill funcationality on searches -->
-      <script>
+        var input = document.getElementById("search");
+        input.addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("searchButton").click();
+            }
+        });
+    </script>
+    <!-- script that enables autofill funcationality on searches -->
+    <script>
         function autocomplete(inp, arr) {
-          var currentFocus;
-          inp.addEventListener("input", function(e) {
-              var a, b, i, val = this.value;
-              closeAllLists();
-              if (!val) { return false;}
-              currentFocus = -1;
-              a = document.createElement("DIV");
-              a.setAttribute("id", this.id + "autocomplete-list");
-              a.setAttribute("class", "autocomplete-items");
-              this.parentNode.appendChild(a);
-              for (i = 0; i < arr.length; i++) {
-                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                  b = document.createElement("DIV");
-                  b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                  b.innerHTML += arr[i].substr(val.length);
-                  b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-                  b.addEventListener("click", function(e) {
-                      inp.value = this.getElementsByTagName("input")[0].value;
-                      closeAllLists();
-                  });
-                  a.appendChild(b);
+            var currentFocus;
+            inp.addEventListener("input", function (e) {
+                var a, b, i, val = this.value;
+                closeAllLists();
+                if (!val) { return false; }
+                currentFocus = -1;
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                this.parentNode.appendChild(a);
+                for (i = 0; i < arr.length; i++) {
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                        b = document.createElement("DIV");
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        b.addEventListener("click", function (e) {
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
+                    }
                 }
-              }
-          });
-          inp.addEventListener("keydown", function(e) {
-              var x = document.getElementById(this.id + "autocomplete-list");
-              if (x) x = x.getElementsByTagName("div");
-              if (e.keyCode == 40) {
-                currentFocus++;
-                addActive(x);
-              } else if (e.keyCode == 38) { //up
-                currentFocus--;
-                addActive(x);
-              } else if (e.keyCode == 13) {
-                e.preventDefault();
-                if (currentFocus > -1) {
-                  if (x) x[currentFocus].click();
+            });
+            inp.addEventListener("keydown", function (e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    currentFocus++;
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    currentFocus--;
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        if (x) x[currentFocus].click();
+                    }
                 }
-              }
-          });
-          function addActive(x) {
-            if (!x) return false;
-            removeActive(x);
-            if (currentFocus >= x.length) currentFocus = 0;
-            if (currentFocus < 0) currentFocus = (x.length - 1);
-            x[currentFocus].classList.add("autocomplete-active");
-          }
-          function removeActive(x) {
-            for (var i = 0; i < x.length; i++) {
-              x[i].classList.remove("autocomplete-active");
+            });
+            function addActive(x) {
+                if (!x) return false;
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                x[currentFocus].classList.add("autocomplete-active");
             }
-          }
-          function closeAllLists(elmnt) {
-            var x = document.getElementsByClassName("autocomplete-items");
-            for (var i = 0; i < x.length; i++) {
-              if (elmnt != x[i] && elmnt != inp) {
-                x[i].parentNode.removeChild(x[i]);
-              }
+            function removeActive(x) {
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
             }
-          }
-          document.addEventListener("click", function (e) {
-              closeAllLists(e.target);
-          });
+            function closeAllLists(elmnt) {
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
         }
-        var cities = ["Palo Alto","Santa Monica","San Luis Obispo"];
+        var cities = ["Palo Alto", "Santa Monica", "San Luis Obispo"];
         autocomplete(document.getElementById("search"), cities);
-        </script>
-        <!-- script for cookies to autofill city name in book -->
-        <script>
-        function setCookie(name,value,days) {
-          var expires = "";
-          if (days) {
-              var date = new Date();
-              date.setTime(date.getTime() + (days*24*60*60*1000));
-              expires = "; expires=" + date.toUTCString();
-          }
-          document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-      }
-      function getCookie(name) {
-          var nameEQ = name + "=";
-          var ca = document.cookie.split(';');
-          for(var i=0;i < ca.length;i++) {
-              var c = ca[i];
-              while (c.charAt(0)==' ') c = c.substring(1,c.length);
-              if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-          }
-          return null;
-      }
-      function eraseCookie(name) {   
-          document.cookie = name+'=; Max-Age=-99999999;';  
-      }
-        
-        </script>
+    </script>
+    <!-- script for cookies to autofill city name in book -->
+    <script>
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        function eraseCookie(name) {
+            document.cookie = name + '=; Max-Age=-99999999;';
+        }
+
+    </script>
     <script src="script.js"></script>
-  </body> 
-      
-  </html>
+</body>
+
+</html>
