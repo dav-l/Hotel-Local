@@ -205,14 +205,15 @@ function hotelLoop(hotelCity) {
 			//call the printing function
 			hotelPrint(hotelDoc);
 		})
+		
+		//Add table data to output table
+		$(resultTable).appendTo("#resultsTable tbody");
+		//Be sure to clear result data for next search call
+		resultTable = '';
+		
 	}).catch(function(error) {
 		console.log("Can't get each hotel snapshot");
 	})
-	
-	//Add table data to output table
-	$(resultTable).appendTo("#resultsTable tbody");
-	//Be sure to clear result data for next search call
-	resultTable = '';
 }
 
 //For a given hotel document, print it's attributes
@@ -256,7 +257,6 @@ function hotelPrint(hotel) {
 			resultTable += "<td>$" + currentHotel.priceSummer + "</td>";
 			break;
 	}
-	
 	
 	//Print out rating
 	resultTable += "<td>" + currentHotel.Rating + "</td>";
