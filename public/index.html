@@ -55,10 +55,12 @@
         <button id="priceHigh" class="button">Price High to Low</button>
 
         <!--<h6>Pricing Filters</h6>-->
-        <button id="priceEight" class="button">Price $800 and below</button>
-        <button id="priceSix" class="button">Price $600 and below</button>
-        <button id="priceFour" class="button">Price $400 and below</button>
-        <button id="priceTwo" class="button">Price $200 and below</button>
+		<form action="/action_page.php">
+			<input type="radio" name="price" value="800" class="button" id="priceEight" style="color:white">Price $800 and below<br>
+			<input type="radio" name="price" value="600" class="button" id="priceSix">Price $600 and below<br>
+			<input type="radio" name="price" value="400" class="button" id="priceFour">Price $400 and below<br>
+			<input type="radio" name="price" value="200" class="button" id="priceTwo">Price $200 and below
+		</form>
 
         <button id="clearFilter" class="button">Clear Filters</button>
         
@@ -123,11 +125,11 @@
                         }
                     </style>
                     <tr>
-                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Hotel</th>
-                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Parking</th>
-                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Pricing</th>
-                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Rating</th>
-                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Wifi</th>
+                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Hotel</th>
+                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Parking</th>
+                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Pricing</th>
+                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Rating</th>
+                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Wifi</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
