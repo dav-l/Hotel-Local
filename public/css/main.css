@@ -421,7 +421,7 @@ input[type=text] {
 }
 
 .s002 {
-  min-height: 94.5vh;
+  min-height: 92.7vh;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -433,6 +433,9 @@ input[type=text] {
   background-size: cover;
   background-position: center center;
   padding: 15px;
+}
+.s002 .filter-box {
+	box-sizing: 100px;
 }
 
 .s002 form {
@@ -569,6 +572,7 @@ input[type=text] {
     display: block;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 1000px;
 }
 .s002 .togglebtn:hover{
   background: #af7d51;
@@ -679,6 +683,7 @@ input[type=text] {
 /*sidebar-----------------------------*/
 .sidenav .filterBtn .button {
     background-color: transparent;
+    min-width: 23px;
     border: 1px #af7d51;
     color: white; /* White text */
     padding: 10px 24px; /* Some padding */
@@ -686,6 +691,7 @@ input[type=text] {
     display: block;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid black;
 }
 
     .sidenav .filterBtn .button:not(:last-child) {
