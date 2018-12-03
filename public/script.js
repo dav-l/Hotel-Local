@@ -48,6 +48,7 @@ const rateOneButton = document.querySelector("#ratingOne");
 const rateTwoButton = document.querySelector("#ratingTwo");
 const rateThreeButton = document.querySelector("#ratingThree");
 const rateFourButton = document.querySelector("#ratingFour");
+const rateFiveButton = document.querySelector("#ratingFive");
 //Price sorts
 const priceLowToHigh = document.querySelector("#priceLow");
 const priceHighToLow = document.querySelector("#priceHigh");
@@ -67,10 +68,12 @@ var resultTable = '';
 
 //Depending on which collection of data needed (for sorting later on)
 var hotelQuery;
-
+//Rate Filtering Label
+var rateStatus = document.getElementById("rateStatus");
 //Default: prints out summer prices
 var priceSeason = "winter";
-
+//No 5 Star Hotels Flag
+var noFiveStar = false;
 //Filter values (rating and price)
 var rateIn = 0;
 var priceIn = 0;
@@ -93,11 +96,14 @@ function pickCity() {
 	
 	//If input city is Palo Alto:
 	if (inputCity == "palo alto") {
+		noFiveStar = false;
 		hotelLoop(paRef);
 	} else if (inputCity == "san luis obispo") {
+		noFiveStar = true;
 		//If San Luis Obispo:
 		hotelLoop(sloRef);
 	} else if (inputCity == "santa monica") {
+		noFiveStar = true;
 		//If Santa Monica: 
 		hotelLoop(smRef);
 	} else {
@@ -167,6 +173,17 @@ function hotelLoop(hotelCity) {
 			case 4:
 				hotelQuery = hotelCity.collection('Hotels 4 Star');
 				break;
+			//rating 5 stars
+			case 5:
+				if (!noFiveStar) {
+					hotelQuery = hotelCity.collection('Hotels 5 Star');
+					break;
+				}
+				else {
+					window.alert(inputCity + " does not have 5 star local hotel entries");
+					hotelQuery = hotelCity.collection('Hotels 4 Star');
+					break;
+				}
 		}
 	} else {
 		//use default collection in case of no rating filter
@@ -306,6 +323,7 @@ rateDesButton.addEventListener("click", function() {
 rateOneButton.addEventListener("click", function() {
 	rateFilter = true;
 	rateIn = 1;
+	rateStatus.innerHTML = "Rating 1 Star & Up";
 	pickCity();
 })
 
@@ -313,6 +331,7 @@ rateOneButton.addEventListener("click", function() {
 rateTwoButton.addEventListener("click", function() {
 	rateFilter = true;
 	rateIn = 2;
+	rateStatus.innerHTML = "Rating 2 Stars & Up";
 	pickCity();
 })
 
@@ -320,6 +339,7 @@ rateTwoButton.addEventListener("click", function() {
 rateThreeButton.addEventListener("click", function() {
 	rateFilter = true;
 	rateIn = 3;
+	rateStatus.innerHTML = "Rating 3 Stars & Up";
 	pickCity();
 })
 
@@ -327,6 +347,15 @@ rateThreeButton.addEventListener("click", function() {
 rateFourButton.addEventListener("click", function() {
 	rateFilter = true;
 	rateIn = 4;
+	rateStatus.innerHTML = "Rating 4 Stars & Up";
+	pickCity();
+})
+
+//Rate 4 stars and up
+rateFiveButton.addEventListener("click", function() {
+	rateFilter = true;
+	rateIn = 5;
+	rateStatus.innerHTML = "Rating 5 Stars";
 	pickCity();
 })
 
@@ -402,14 +431,13 @@ clearFilterButton.addEventListener("click", function() {
 	for (var i = 0; i < filterRate.length; i++) {
 		filterRate[i].checked = false;
 	}
-	
+	rateStatus.innerHTML = "Rating Filter";
 	rateIn = 0;
 	priceIn = 0;
 	pickCity();
 })
 
-
-//Sidebar Toggle-----------------------------
+//Sidebar Toggle
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
