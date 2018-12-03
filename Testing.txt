@@ -1,0 +1,190 @@
+//Testing for each component of search functionality at a time
+
+/* 1) Using inputCity to represent the value of the search bar 
+ * input.
+ * The results originally stored in a string in pre-formatted
+ * data, (previously saved with id: searchOutput).
+ * Uses function called by clicking search button
+ */
+ 
+ const searchButton = document.querySelector("#searchButton");
+ const searchInput = document.querySelector("#search");
+ const searchOutput = document.querySelector("#results");
+ document.getElementById("searchButton").click();
+ inputCity = searchInput.value;
+ searchOutput.innerText = "Value searched is " + inputCity;
+ 
+ //Check pre-formatted data block on index.html to verify
+ 
+ 
+/* 2) Once search bar set up, search bar needs to check whether
+ * input value is within set list of cities in database:
+ * Cities = {'Palo Alto', 'San Luis Obispo', 'Santa Monica'}
+ * If so, return name of city
+ * If not, display a window alert on screen (index.html)
+ */
+ 
+ document.getElementById("searchButton").click();
+ inputCity = searchInput.value;
+ 
+/* For 'Palo Alto', 'San Luis Obispo' and 'Santa Monica',
+ * check data block for name
+ * Type some other input -> window displays: 
+ * "Sorry information on " + inputCity + " unavailable"
+ */
+ 
+ 
+/* 3) If input city exists, (i.e. in Cities list), print out list
+ * of hotels in city's hotel list reference in database.
+ */
+ 
+ document.getElementById("searchButton").click();
+ inputCity.searchInput.value;
+ 
+/* This is after first implementation of hotelLoop (goes 
+ * through each hotel snapshot in hotels list reference) and 
+ * hotelPrint (print hotel name and provided attributes)
+ * Result should print list of hotels in pre-formatted data
+ */
+ 
+/* 4) First implementation of filtering/sorting buttons.
+ * Button placeholders made in HTML for parking, wifi and rate 
+ * sort.
+ * Each button is initially set to just have window pop up by
+ * clicking.
+ */
+ 
+ document.getElementById("parkFilter").click();
+ //window pops up: "Parking Filter!"
+ document.getElementById("wifiFilter").click();
+ //.. "WiFi Filter!"
+ document.getElementById("rateSort").click();
+ //.. "Rate Sort!"
+ 
+
+/* 5) Park and wifi filters skip over printing any hotels 
+ * that have the particular attribute as false in database.
+ * Each button calls search all over again, only now with 
+ * sifting function
+ */
+ 
+ document.getElementById("parkFilter").click();
+ /*See shortened list with all hotel results now having
+  "free" parking attribute*/
+ document.getElementById("wifiFilter").click();
+ /*Only see shortened list with all hotel results now having
+  "free" wifi attribute for Santa Monica (could change with
+  bigger database)*/
+  
+  
+/* 6) Rate sort buttons become Rating High to Low and Rating
+ * Rating Low to High Buttons
+ */
+ 
+ document.getElementById("rateHigh").click();
+ //See hotel list print, with hotel rating from high to low
+ document.getElementById("rateLow").click();
+ //.. from low to high
+ 
+ 
+/* 7) Rate Low to High taken out, replaced with rating filter 
+ * buttons, (1 Star & Up, 2 Stars & Up, 3 ...)
+ */
+ 
+ document.getElementById("ratingOne").click();
+ /*Data currently has no hotels below rating of 1.5, so 
+  all data is printed */
+ document.getElementById("ratingTwo").click();
+ /*Print hotels of rating >= 2*/
+ document.getElementById("ratingThree").click();
+ /*Print hotels of rating >= 3*/
+ document.getElementById("ratingFour").click();
+ /*Print hotels of rating >= 4*/
+ document.getElementById("ratingFive").click();
+ /*Print hotels of rating == 5*/
+ 
+ 
+/* 8) Code previously had filtering/sorting working mutually
+ * exclusively. Functions should no longer be doing that.
+ */
+ 
+ document.getElementById("parkFilter").click();
+ document.getElementById("wifiFilter").click();
+ document.getElementById("ratingThree").click();
+ /*Results in shorter list -> all now have free parking, 
+  wifi and ratings >= 3*/
+  
+  
+/* 9) Price sorting button now available, (high -> low/
+ low -> high)
+ */
+ 
+ document.getElementById("priceLow").click();
+ //Prints hotel list, sorted by price from low to high
+ document.getElementById("priceHigh").click();
+ //Prints hotel list, sorted by price from high to low
+ 
+ 
+/* 10) Price filtering buttons now available, ($800 & below, 
+ $600 & below, $400 ...)
+ */
+ 
+ document.getElementById("priceEight").click();
+ //Prints hotels with price <= 800
+ document.getElementById("priceSix").click();
+ //Prints hotels with price <= 600
+ document.getElementById("priceFour").click();
+ //Prints hotels with price <= 400
+ document.getElementById("priceTwo").click();
+ //Prints hotels with price <= 200
+ 
+ 
+/* 11) Having complex data queries, (sorting by one attribute,
+ * filtering by another).
+ */
+ 
+ document.getElementById("rateFour").click();
+ document.getElementById("priceLow").click();
+ /*Produces list of hotels with rating 4+, from low to high 
+  price*/
+  
+ 
+/* 12) Different seasonal pricing now available. Code still 
+ * runs the same, only now displaying different price depending 
+ * on user input
+ */
+ 
+ document.getElementById("winterPrice").click();
+ //Prints hotels with winter pricing attribute
+ document.getElementById("springPrice").click();
+ //Prints hotels with spring pricing attribute
+ document.getElementById("summerPrice").click();
+ //Prints hotels with summer pricing attribute
+ 
+
+/* 13) Seasonal pricing now a drop-down menu rather than a 
+ * series of mutually exclusive buttons.
+ */
+ 
+ var seasonalPrice = document.getElementById("seasonalPrice");
+ $(document).ready(function(){
+    $("select").change(function(){
+		seasonChange();
+    });
+ /*Price changes just as before*/
+
+
+/* 14) Rating filters are now displayed as stars.
+ */
+ 
+ document.getElementById("ratingOne").click();
+ /*Data currently has no hotels below rating of 1.5, so 
+  all data is printed */
+ document.getElementById("ratingTwo").click();
+ /*Print hotels of rating >= 2*/
+ document.getElementById("ratingThree").click();
+ /*Print hotels of rating >= 3*/
+ document.getElementById("ratingFour").click();
+ /*Print hotels of rating >= 4*/
+ document.getElementById("ratingFive").click();
+ /*Print hotels of rating == 5*/
