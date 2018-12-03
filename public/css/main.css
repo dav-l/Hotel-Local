@@ -634,6 +634,25 @@ input[type=text] {
   }
 }
 
+
+.s002 form table {
+    /* Black background with 68% opacity */
+	background-color: rgba(0,0,0,0.68);
+    border-collapse: separate;
+}
+.s002 form th, td {
+    font-family: sans-serif;
+    /* White font with 90% opacity */
+    color: rgba(255, 255, 255, 0.90);
+}
+.s002 form th {
+    font-weight: bold;
+	text-align: center;
+	color:#82C7A5;
+	background:black;
+	border-color:ActiveBorder
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
@@ -741,6 +760,16 @@ input[type=text] {
         font-size: 36px;
         margin-left: 50px;
     }
+	
+.sidenav .filterBtn .button #seasonalPrice {
+	background-color: rgb(232, 221, 196);
+	color: rgb(0, 0, 0);
+}
+
+.sidenav .filterBtn .rate {
+	margin-left: 22px;
+}
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
