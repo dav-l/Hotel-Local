@@ -55,21 +55,23 @@
         <button id="priceHigh" class="button">Price High to Low</button>
 
         <!--<h6>Pricing Filters</h6>-->
-		<form action="/action_page.php">
-			<input type="radio" name="price" value="800" class="button" id="priceEight" style="color:white">Price $800 and below<br>
-			<input type="radio" name="price" value="600" class="button" id="priceSix">Price $600 and below<br>
-			<input type="radio" name="price" value="400" class="button" id="priceFour">Price $400 and below<br>
-			<input type="radio" name="price" value="200" class="button" id="priceTwo">Price $200 and below
+           <!--<h6>Pricing Filters</h6>-->
+		<form action="/action_page.php" style="color:white; margin-left:22px; border-bottom: 1px solid black" >
+			Price $800 and below<br><input type="radio" name="price" value="800" class="button" id="priceEight">
+			Price $600 and below<br><input type="radio" name="price" value="600" class="button" id="priceSix">
+			Price $400 and below<br><input type="radio" name="price" value="400" class="button" id="priceFour">
+			Price $200 and below<input type="radio" name="price" value="200" class="button" id="priceTwo">
 		</form>
+
 
         <button id="clearFilter" class="button">Clear Filters</button>
         
         <!--Drop-down list for choosing price to display-->
         <p class="button">
             Season Price <select name="Price Season" id="seasonalPrice" class="button" onchange="seasonChange()">
-                <option value="winter">Winter</option>
-                <option value="spring">Spring</option>
-                <option value="summer">Summer</option>
+                <option value="winter" style="background-color:grey">Winter</option>
+                <option value="spring" style="background-color:grey">Spring</option>
+                <option value="summer" style="background-color:grey">Summer</option>
             </select>
         </p>
         
@@ -81,7 +83,9 @@
 <body>
 
     <div id="index" class="s002">
-        <button onclick="openNav()" class="togglebtn">Filters</button>
+        <div id="filter-box" position: absolute;>
+                <button onclick="openNav()" class="togglebtn">Filters</button>
+        </div>
         <form>
             <fieldset>
                 <legend>HotelLocal</legend>
@@ -125,11 +129,11 @@
                         }
                     </style>
                     <tr>
-                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Hotel</th>
-                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Parking</th>
-                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Pricing</th>
-                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Rating</th>
-                        <th style="text-align: center; color:#A0DDDC; background:black; border-color:ActiveBorder">Wifi</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Hotel</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Parking</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Pricing</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Rating</th>
+                        <th style="text-align: center; color:#82C7A5; background:black; border-color:ActiveBorder">Wifi</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
