@@ -24,4 +24,9 @@ Known bugs
   that would prove a bit tedious given the amount of data needed to be duplicated.
 
 User Stories for acceptance tests
-1. 
+1. Sprint 1 - User Story 1: Want to be able to search for hotels
+2. Sprint 2 - User Story 3: Want a detailed, more interactive site
+3. Sprint 3 - User Story 1: Search for hotels given location
+4. Sprint 3 - User Story 2: Filter/sort through hotels with different options
+5. Sprint 4 - User Story 1: Find basic information for hotels in more readable format
+6. Sprint 4 - User Story 2: More variety to filtering options, allow some simultaneous filtering
