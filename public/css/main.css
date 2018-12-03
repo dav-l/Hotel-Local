@@ -683,7 +683,7 @@ input[type=text] {
 /*sidebar-----------------------------*/
 .sidenav .filterBtn .button {
     background-color: transparent;
-    min-width: 23px;
+    min-width: 200px;
     border: 1px #af7d51;
     color: white; /* White text */
     padding: 10px 24px; /* Some padding */
