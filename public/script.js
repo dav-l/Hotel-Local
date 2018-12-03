@@ -398,6 +398,11 @@ clearFilterButton.addEventListener("click", function() {
 		filterPrice[i].checked = false;
 	}
 	
+	var filterRate = document.getElementsByName("rate");
+	for (var i = 0; i < filterRate.length; i++) {
+		filterRate[i].checked = false;
+	}
+	
 	rateIn = 0;
 	priceIn = 0;
 	pickCity();

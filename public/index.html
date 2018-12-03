@@ -42,10 +42,19 @@
         <button id="wifiFilter" class="button">Wi-Fi availability</button>
 
         <!--<h6>Rating Filters</h6>-->
-        <button id="ratingOne" class="button">Rating *</button>
-        <button id="ratingTwo" class="button">Rating **</button>
-        <button id="ratingThree" class="button">Rating ***</button>
-        <button id="ratingFour" class="button">Rating ****</button>
+        <div class="rate">
+			<!--<h4 style="color: white">Rating</h4>-->
+			<input type="radio" id="ratingFive" name="rate" value="5" />
+				<label class="full" for="ratingFive" title="Amazing - 5 Stars">5 stars</label>
+			<input type="radio" id="ratingFour" name="rate" value="4" />
+				<label class="full" for="ratingFour" title="Pretty Good - 4 Stars">4 stars</label>
+			<input type="radio" id="ratingThree" name="rate" value="3" />
+				<label class="full" for="ratingThree" title="Okay - 3 Stars">3 stars</label>
+			<input type="radio" id="ratingTwo" name="rate" value="2" />
+				<label class="full" for="ratingTwo" title="Not Great - 2 Stars">2 stars</label>
+			<input type="radio" id="ratingOne" name="rate" value="1" />
+				<label class="full" for="ratingOne" title="Pretty Bad - 1 Star">1 star</label>
+		</div>
 
         <!--<h6>Rating Sort</h6>-->
         <button id="rateHigh" class="button">Rating High to Low</button>
@@ -117,13 +126,11 @@
                             background-color: rgba(0,0,0,0.68);
                             border-collapse: separate;
                         }
-
                         th, td {
                             font-family: sans-serif;
                             /* White font with 90% opacity */
                             color: rgba(255, 255, 255, 0.90);
                         }
-
                         th {
                             font-weight: bold;
                         }
@@ -254,7 +261,6 @@
         function eraseCookie(name) {
             document.cookie = name + '=; Max-Age=-99999999;';
         }
-
     </script>
     <script src="script.js"></script>
 </body>
