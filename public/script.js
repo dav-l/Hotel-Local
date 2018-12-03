@@ -1,13 +1,5 @@
 // Initialize Firebase
-var config = {
-    apiKey: "AIzaSyB9OMhcTdFNT5CUOnbAcXrM2Y2--DPSd9k",
-    authDomain: "hotel-local-cs115.firebaseapp.com",
-    databaseURL: "https://hotel-local-cs115.firebaseio.com",
-    projectId: "hotel-local-cs115",
-    storageBucket: "hotel-local-cs115.appspot.com",
-    messagingSenderId: "854556195678"
-};
-firebase.initializeApp(config);
+
 
 /* Primary code references for search bar (so far):
  * 
@@ -59,6 +51,7 @@ const rateFourButton = document.querySelector("#ratingFour");
 //Price sorts
 const priceLowToHigh = document.querySelector("#priceLow");
 const priceHighToLow = document.querySelector("#priceHigh");
+
 //Price Filters
 const priceEightHundred = document.querySelector("#priceEight");
 const priceSixHundred = document.querySelector("#priceSix");
@@ -398,6 +391,12 @@ clearFilterButton.addEventListener("click", function() {
 	priceFilter = false;
 	lowestPrice = false;
 	highestPrice = false;
+	
+	//$('input[name=price]').attr('checked', false);
+	var filterPrice = document.getElementsByName("price");
+	for (var i = 0; i < filterPrice.length; i++) {
+		filterPrice[i].checked = false;
+	}
 	
 	rateIn = 0;
 	priceIn = 0;
