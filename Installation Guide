@@ -1,3 +1,0 @@
-To install this project first pull the repository. The navigate to public and open up your terminal and set up
-firebase with npm install -g firebase-tools. Then login to your firebase account and do firebase init and setup up the site with hosting
-and database checked. Then do firebase deploy to setup a local server that allows you to view the site.
