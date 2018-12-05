@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Explore Hotels & Cities</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="./css/bootstrap.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<!-- Template from w3schools.com which has been modified for the purpose of the project -->
+
+
+<body>
+        <!-- Navbar Code -->
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><img src="images/whitelogo.png" width="70" height="50"> </li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                        <li class="active"><a href="Book.html">Explore Hotels & Cities</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- Header -->
+        <header class="w3-container w3-theme w3-padding" id="myHeader">
+            <div class="w3-center">
+                <header class="w3-display-container w3-content" style="max-width: 1500px;">
+                <img src="images/sky.jpg" alt="The Hotel" style="min-width:1000px" width="500" height="170">
+                    <div class="w3-display-left w3-padding w3-col l6 m8">
+
+                   <h1 class="w3-jumbo w3-center w3-animate-top">Explore!</h1>
+
+
+
+
+
+                    <div class="w3-padding-25">
+                    </div>
+                </div>
+</header>
+        <!-- Box 1 -->
+        <div class="w3-row-padding w3-center w3-margin-top">
+
+            <div class="w3-third">
+                <div class="w3-card w3-container" style="min-height:400px">
+                    <h3>Find things to do and book excursions!</h3><br>
+                    <img src="images/geturguide.png" style="width: 300px; height: 250px;"></img>
+                    <form method="get" action="https://www.getyourguide.com/s">
+                        <table border="0" align="center" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <input type="text" name="q" size="25" style="color:#808080;"
+                                           maxlength="255" placeholder="Enter the City!"
+                                           onfocus="if(this.value==this.defaultValue)this.value==''; this.style.color='black';"
+                                           onblur="if(this.value=='')this.value=this.defaultValue; " />
+                                    <input type="submit" value="Go!" />
+                                    <input type="hidden" name="sitesearch" value="yoursite.com" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                </div>
+            </div>
+            <!-- Box 2 -->
+            <div class="w3-third">
+                <div class="w3-card w3-container" style="min-height:400px">
+                    <h3>Weather Infomation</h3><br>
+                        <!-- Weather Widger -->
+                    <center>
+                     <div style="width: 280px;">
+                        <iframe style="display: block;"
+                        src="https://cdnres.willyweather.com/widget/loadView.html?id=98337"
+                        width="280" height="228" frameborder="0" 
+                        scrolling="no"></iframe>
+                        <a style="text-indent: -9999em;height: 20px;
+                        position: relative;display: block;
+                        margin: -20px 0 0 0;z-index: 1" 
+                        href="https://www.willyweather.com/ca/santa-clara-county/palo-alto.html" 
+                        rel="nofollow">forecast for palo alto</a>
+                      </div>
+                    </center>
+                </div>
+            </div>
+            <!-- Box 3 -->
+            <div class="w3-third">
+                <div class="w3-card w3-container" style="min-height:400px">
+                    <h3>Realiable Reviews and Feedback</h3><br>
+
+                    <img src="images/tripadvisor.png" style="width:300px;height:200px;"></img>
+                    <form method="get" action="https://www.tripadvisor.com/search">
+                        <table border="0" align="center" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <input type="text" name="q" size="25" style="color:#808080;"
+                                           maxlength="255" placeholder="Enter Hotel Name and City"
+                                           onfocus="if(this.value==this.defaultValue)this.value==''; this.style.color='black';"
+                                           onblur="if(this.value=='')this.value=this.defaultValue; " />
+                                    <input type="submit" value="Go!" />
+                                    <input type="hidden" name="sitesearch" value="yoursite.com" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+
+            </div>
+    </body>
+</html>
